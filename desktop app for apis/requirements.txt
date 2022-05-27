@@ -1,0 +1,5 @@
+flask
+tkinter
+requests
+json
+Pillow
