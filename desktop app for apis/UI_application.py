@@ -172,6 +172,8 @@ def hello_api():
 
     window1.geometry("%dx%d" % (width/2, height/2))
     window1.title('Frontend for hello api')
+    
+    window1.attributes("-topmost", True)  # Put this window in foreground
 
     name = Label(window1, text="Name:")
     Name = Entry(window1)
@@ -338,6 +340,8 @@ def sum_api():
 
     window2.geometry("%dx%d" % (width/2, height/2))
     window2.title('Frontend for summation api')
+    
+    window2.attributes("-topmost", True)  # Put this window in foreground
 
     number1 = Label(window2, text="Number1:")
     Number1 = Entry(window2)
