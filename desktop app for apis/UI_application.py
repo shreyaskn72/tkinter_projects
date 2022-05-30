@@ -27,6 +27,11 @@ window.geometry("%dx%d" % (width, height))
 
 window.title('Frontend for apis')
 
+# color of the window
+#window.config(bg='cyan')
+
+
+
 
 # Success multigrid method
 def multi_grid():
@@ -375,14 +380,15 @@ def sum_api():
 
 
 first_button = tk.Button(text="Hello api", fg="Blue", command=hello_api)
-first_button.grid(row=10, column=10, pady=150, sticky="W")
+#first_button.grid(row=10, column=10, pady=150, sticky="W")
+first_button.grid(row=2, column=10, sticky="W")
 
 
 second_button = tk.Button(text="add numbers", fg="Blue", command=sum_api)
-second_button.grid(row=10, column=10, padx=320, sticky="W")
+second_button.grid(row=2, column=10, padx=320, sticky="W")
 
 third_button = tk.Button(text="MultiGrid", fg="Blue", command=multi_grid)
-third_button.grid(row=10, column=10, padx=640, sticky="W")
+third_button.grid(row=2, column=10, padx=640, sticky="W")
 
 
 quit_button = tk.Button(window,
@@ -390,11 +396,16 @@ quit_button = tk.Button(window,
                    fg="red",
                    command=quit)
 
-quit_button.grid(row=11, column=10, sticky="W", padx=310)
+quit_button.grid(row=3, column=10, sticky="W", padx=310, pady=0)
 #quit_button.grid(row=2, column=0, sticky="WE")
 
-
-
+from tkinter import filedialog
+def upload_file():
+    file = filedialog.askopenfilename()
+    fob=open(file,'r')
+    print(fob.read())
+    #file = filedialog.askopenfile()
+    #print(file.read())
 
 menubar = Menu(window)
 
@@ -406,6 +417,9 @@ editmenu.add_command(label="Cut")
 editmenu.add_command(label="Copy")
 editmenu.add_separator()
 editmenu.add_command(label="Paste")
+
+editmenu.add_separator()
+editmenu.add_command(label="upload", command=upload_file)
 
 editmenu.add_separator()
 editmenu.add_command(label="Exit", command=quit)
@@ -446,7 +460,7 @@ window.config(menu=menubar)
 #toolbar1
 hello_toolbar = Frame(window, bd=1, relief=RAISED)
 img = Image.open("logos/hello.png")
-img = img.resize((150, 150))
+img = img.resize((50, 50))
 eimg = ImageTk.PhotoImage(img)
 hello_tool_button = tk.Button(hello_toolbar, image=eimg, relief=FLAT, command=hello_api)
 hello_tool_button.image = eimg
@@ -458,7 +472,7 @@ hello_toolbar.grid(row=0, column=0)
 #toolbar2
 sum_toolbar = Frame(window, bd=1, relief=RAISED)
 img = Image.open("logos/sum.png")
-img = img.resize((150, 150))
+img = img.resize((50, 50))
 eimg = ImageTk.PhotoImage(img)
 sum_tool_button = tk.Button(sum_toolbar, image=eimg, relief=FLAT, command=sum_api)
 sum_tool_button.image = eimg
@@ -468,17 +482,48 @@ sum_toolbar.grid(row=0, column=1)
 #toolbar3
 exit_toolbar = Frame(window, bd=1, relief=RAISED)
 img = Image.open("logos/exit.png")
-img = img.resize((150, 150))
+img = img.resize((50, 50))
 eimg = ImageTk.PhotoImage(img)
 exitButton = tk.Button(exit_toolbar, image=eimg, relief=FLAT, command=quit)
 exitButton.image = eimg
 exitButton.grid(row=0, column=2)
 exit_toolbar.grid(row=0, column=2)
 
+#Vertical toolbar
+#toolbar4
+hello_vertical = Frame(window, bd=1, relief=RAISED)
+img = Image.open("logos/hello.png")
+img = img.resize((50, 50))
+eimg = ImageTk.PhotoImage(img)
+hello_vertical_button = tk.Button(hello_vertical, image=eimg, relief=FLAT, command=hello_api)
+hello_vertical_button.image = eimg
+hello_vertical_button.grid(row=1, column=0)
+hello_vertical.grid(row=1, column=0)
+
+#toolbar5
+sum_vertical = Frame(window, bd=1, relief=RAISED)
+img = Image.open("logos/sum.png")
+img = img.resize((50, 50))
+eimg = ImageTk.PhotoImage(img)
+sum_vertical_button = tk.Button(sum_vertical, image=eimg, relief=FLAT, command=sum_api)
+sum_vertical_button.image = eimg
+sum_vertical_button.grid(row=2, column=0)
+sum_vertical.grid(row=2, column=0)
+
+#toolbar6
+exit_toolbar = Frame(window, bd=1, relief=RAISED)
+img = Image.open("logos/exit.png")
+img = img.resize((50, 50))
+eimg = ImageTk.PhotoImage(img)
+exitButton = tk.Button(exit_toolbar, image=eimg, relief=FLAT, command=quit)
+exitButton.image = eimg
+exitButton.grid(row=3, column=0)
+exit_toolbar.grid(row=3, column=0)
+
 credits_label = tk.Label(window, text="UI for apis by Shreyas", fg="green", activebackground="green", font=('Times', '18', 'italic'))
 
 
-credits_label.grid(row=15, column=10, padx=250, pady=50, sticky="W")
+credits_label.grid(row=5, column=10, padx=250, sticky="W")
 
 if __name__ == "__main__":
     window.mainloop()
