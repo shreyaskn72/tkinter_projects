@@ -1,6 +1,8 @@
 # Popup menu structure
 The code is written to demonstrate the interaction of desktop app with apis.
 
+The main window contains menus. Upon clicking menus it will open a particular child.
+
 Each pop up will contain a different apis. 
 
 hello api will interact with hello api popup.
