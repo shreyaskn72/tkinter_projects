@@ -1,9 +1,11 @@
 # Frames menu structure
 The code is written to demonstrate the interaction of desktop app with apis.
 
-Each frame will contain a different apis. 
+The main window contains menus. Upon clicking menus it will open a particular frame.
 
-hello api will interact with hello api popup.
+Each frame needs a different api to give response. 
+
+hello api will interact with hello api frame.
 
 Sum api will interact with sum api popup
 
