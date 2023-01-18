@@ -1,7 +1,7 @@
 # Frames menu structure
 The code is written to demonstrate the interaction of desktop app with apis.
 
-The main window contains menus. Upon clicking menus it will open a particular frame.
+The main window contains menus. Upon clicking a particular menu it will open a particular frame.
 
 Each frame needs a different api to give response. 
 
