@@ -1,7 +1,7 @@
 # Popup menu structure
 The code is written to demonstrate the interaction of desktop app with apis.
 
-The main window contains menus. Upon clicking menus it will open a particular child.
+The main window contains menus. Upon clicking menus it will open a particular child window as popup.
 
 Each pop up will contain a different apis. 
 
