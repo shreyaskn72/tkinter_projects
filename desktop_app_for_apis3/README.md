@@ -7,7 +7,7 @@ Each frame needs a different api to give response.
 
 hello api will interact with hello api frame.
 
-Sum api will interact with sum api popup
+Sum api will interact with sum api frame.
 
 ## Running UI application
 
