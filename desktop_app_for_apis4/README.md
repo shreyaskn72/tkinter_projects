@@ -7,7 +7,7 @@ Each Popup needs a different api to give response.
 
 hello api will interact with hello api popup.
 
-Sum api will interact with sum api popup
+Sum api will interact with sum api popup.
 
 ## Running UI application
 
