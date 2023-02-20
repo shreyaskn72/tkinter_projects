@@ -5,9 +5,9 @@ The main window contains dropdown. Upon clicking a particular dropdown it will o
 
 Each Popup needs a different api to give response. 
 
-hello api will interact with hello api popup.
+hello api will interact with hello api popup window.
 
-Sum api will interact with sum api popup.
+Sum api will interact with sum api popup window.
 
 ## Running UI application
 
