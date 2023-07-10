@@ -1,0 +1,1 @@
+Printing console to tkinter text box and log file
