@@ -36,6 +36,32 @@ def addNumbers():
     myText.set(res)
 
 
+@logging_print_decorator
+def Subtract():
+    res = int(entry1.get()) - int(entry2.get())
+    print("Inputs to be subtracted are: ", entry1.get(), "and", entry2.get())
+    print("Difference is: ", res)
+    print("\n")
+    myText.set(res)
+
+@logging_print_decorator
+def Multiply():
+    res = int(entry1.get()) * int(entry2.get())
+    print("Inputs to be multiplied are: ", entry1.get(), "and", entry2.get())
+    print("Product is: ", res)
+    print("\n")
+    myText.set(res)
+
+
+@logging_print_decorator
+def divide():
+    res = int(entry1.get()) / int(entry2.get())
+    print("Inputs to be divided are: ", entry1.get(), "and", entry2.get())
+    print("Quotient is: ", res)
+    print("\n")
+    myText.set(res)
+
+
 window = Tk()
 myText = StringVar()
 #getting screen width and height of display
@@ -46,8 +72,8 @@ height= window.winfo_screenheight()
 window.geometry("%dx%d" % (width/1.5, height/1.5))
 Label(window, text="Number 1").grid(row=0, sticky=W)
 Label(window, text="Number 2").grid(row=1, sticky=W)
-Label(window, text="TOTAL:").grid(row=3, sticky=W)
-total = Label(window, text="", textvariable=myText).grid(row=3, column=1, sticky=W)
+Label(window, text="OUTPUT:").grid(row=1, column=2, sticky=W)
+total = Label(window, text="", textvariable=myText).grid(row=1, column=3, sticky=W)
 
 
 
@@ -59,13 +85,23 @@ entry1.grid(row=0, column=1)
 entry2.grid(row=1, column=1)
 
 button_press = Button(window, text="SUMMATION", command=addNumbers)
-button_press.grid(row=0, column=2, columnspan=2, rowspan=2, sticky=W + E + N + S, padx=5, pady=5)
+button_press.grid(row=3, column=0)
+
+
+button_sub = Button(window, text="SUBTRACT", command=Subtract)
+button_sub.grid(row=4, column=0)
+
+button_mul = Button(window, text="MULTIPLY", command=Multiply)
+button_mul.grid(row=3, column=1)
+
+button_div = Button(window, text="DIVIDE", command=divide)
+button_div.grid(row=4, column=1)
 
 
 textwidget = tk.Text(window)
 
 textwidget.insert(tk.END, myText)
-textwidget.grid(row=4, column=3, sticky="WE")
+textwidget.grid(row=7, column=3, sticky="WE")
 
 
 v=Scrollbar(textwidget, orient='vertical')
