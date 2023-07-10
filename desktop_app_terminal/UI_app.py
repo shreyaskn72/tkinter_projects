@@ -54,7 +54,7 @@ def Multiply():
 
 
 @logging_print_decorator
-def divide():
+def division():
     res = int(entry1.get()) / int(entry2.get())
     print("Inputs to be divided are: ", entry1.get(), "and", entry2.get())
     print("Quotient is: ", res)
@@ -94,7 +94,7 @@ button_sub.grid(row=4, column=0)
 button_mul = Button(window, text="MULTIPLY", command=Multiply)
 button_mul.grid(row=3, column=1)
 
-button_div = Button(window, text="DIVIDE", command=divide)
+button_div = Button(window, text="DIVIDE", command=division)
 button_div.grid(row=4, column=1)
 
 
